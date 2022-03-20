@@ -1,0 +1,93 @@
+@import "./mediaQueries";
+
+.index__lista {
+    list-style: none;
+    font-weight: 700;
+
+    &--letras {
+        font-family: 'Birthstone', cursive;
+        font-weight: 700;
+        font-size: 3rem;
+        text-align: center;
+
+        @include tablet {
+            font-size: 2.2rem;
+            text-align: center;
+            justify-content: center;
+    }
+        @include movilM() {
+            font-size: 2.2rem;
+            text-align: center;
+            justify-content: center;
+        }
+
+    }
+}
+
+
+.index__texto {
+    font-size: 1.5rem;
+    text-align: left;
+    line-height: 1.5rem;
+    margin: 4.1rem;
+
+    @include movilM {
+        font-size: 1rem;
+        margin: 2rem;
+        text-align: center;
+    }
+
+    &--fin {
+        font-family:'birthstone', cursive;
+        font-weight: 700;
+        font-size: 3rem;
+        text-align: center;
+        padding-top: 2rem;
+
+        @include tablet {
+            line-height: 3rem;
+        }
+
+        @include movilM {
+            font-size: 2rem;
+            text-align: justify;
+            line-height: 2.5rem;
+        }
+
+    }
+}
+
+.sizeCarousel {
+    margin: auto;
+    width: 90%;
+    height: 32rem;
+    object-fit: cover;
+
+    @include tablet {
+        margin: auto;
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+.local {
+
+    border-radius: .7rem;
+    @include tablet {
+        margin: auto;
+        width: 90%;
+        height: auto;
+    }
+
+    @include movilM {
+        width: 90%;
+        margin: auto;
+        height: auto;
+    }
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
+   
+}

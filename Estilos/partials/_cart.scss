@@ -1,0 +1,25 @@
+.pepe {
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#nodo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+
+}
+
+#carrito {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.botonera {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

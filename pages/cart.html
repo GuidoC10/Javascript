@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Carrito</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Estilos/main.css">
+</head>
+<body>
+    <!-- Navegacion-->
+    <div class="grid">
+        <header class="header">
+            <nav class="navbar navbar-expand-lg navbar-light nav">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="../index.html"><img src="../img/logoDetalles-min.jpg" alt="Logo" title="Home" class="nav__logo"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                    <div class="collapse navbar-collapse nav__botones" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="navItem nav__navItem" href="../pages/rosasPreservadas.html">Rosas Preservadas</a>
+                            <a class="navItem nav__navItem" href="../pages/trabajos.html">Trabajos</a>
+                            <a class="navItem nav__navItem" href="../pages/enviosYPagos.html">Envios y Pagos</a>
+                            <a class="navItem nav__navItem" href="../pages/contactos.html">Contactos</a>
+                            <a class="navItem nav__navItem" href="#">Carrito</a>
+                        </div>
+                    </div>
+                </div>
+            </nav> 
+        </header>
+        <main>
+            <div id="carrito" >
+                <div>
+                    <img src="../img/globo.jpeg" class="trabajos__imagen" alt="Globos" title="Globos">
+                    <div>
+                        <h3>Articulo 1 $1500</h3>
+                    </div>
+                    <!-- <div class="botonera">
+                        <div>
+                            <button id="globo" class="btn btn-primary">Comprar</button>
+                        </div>
+                        <div>
+                            <select id="cantidadGlobo">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div> -->
+                </div>
+                <div>
+                    <img src="../img/macarons.jpeg" class="trabajos__imagen" alt="Macarons" title="Macarons">
+                    <div>
+                        <h3>Articulo 2 $2000</h3>
+                    </div>
+                    <!-- <div class="botonera">
+                        <div>
+                            <button id="macarons" class="btn btn-primary">Comprar</button>
+                        </div>
+                        <div>
+                            <select id="cantidadMacarons">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div> -->
+                </div>
+                <div>
+                    <img src="../img/preservadas.jpeg" class="trabajos__imagen" alt="Rosas Preservadas" title="Rosas Preservadas">
+                    <div>
+                        <h3>Articulo 3 $3000</h3>
+                    </div>
+                    <!--<div class="botonera">
+                        <div>
+                            <button id="preservadas" class="btn btn-primary">Comprar</button>
+                        </div>
+                        <div>
+                            <select id="cantidadPreservadas">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>-->
+                </div>
+                <div>
+                    <img src="../img/mantita1.jpeg" class="trabajos__imagen" alt="Mantitas" title="Mantitas">
+                    <div>
+                        <h3>Articulo 4 $4000</h3>
+                    </div>
+                    <!--<div class="botonera">
+                        <div>
+                            <button id="mantitas" class="btn btn-primary">Comprar</button>
+                        </div>
+                        <div>
+                            <select id="cantidadMantitas">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>-->
+                </div>
+                
+        </main>
+        <footer class="footer">
+            <span class="footer__span">Seguinos en las redes
+                <a href="http://www.instagram.com/detalles.en.flor"> <img class="footer__span--redes" src="../img/imgInstagram.jfif" alt="Instagram" title="Instagram" width="20rem" height="20rem"></a>
+                <a href="https://m.facebook.com/pages/category/Product-Service/Detalles-en-flor-792428931095253/"> <img class="footer__span--redes" src="../img/imgFacebook.jfif" alt="Facebook" title="Facebook" width="20rem" height="20rem"></a>
+            </span>
+            <span>®Detalles en flor</span>
+        </footer>
+    </div>
+    <script src="../js/cart.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

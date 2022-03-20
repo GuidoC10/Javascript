@@ -1,0 +1,54 @@
+.contactos {
+    padding: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.info {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.fieldset {
+    border: hidden;
+    text-align: left;
+
+    &__contactosPadre {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &--hijos {
+            padding: 1rem;
+        }
+    }
+}
+
+.mapa {
+    height: 20rem;
+    width: 28rem;
+
+    @include tablet {
+        width: 18rem;
+        height: auto;
+
+    }
+
+    @include movilM {
+        width: 15rem;
+        height: auto;
+    }
+   
+}
+
+.claseFormulario {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+
+}

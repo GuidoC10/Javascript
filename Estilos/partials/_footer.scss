@@ -1,0 +1,13 @@
+.footer {
+    margin-top: .3rem;
+    padding: 1rem;
+    border-top: solid black 2px;
+
+    &__span {
+        display: block;
+
+        &--redes {
+            border-radius: .3rem;
+        }
+    }
+}

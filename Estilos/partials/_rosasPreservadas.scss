@@ -1,0 +1,57 @@
+ .texto {
+    font-size: 1.5rem;
+    text-align: left;
+    line-height: 1.5;
+    margin: 3.1rem;
+
+    @include movilM {
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.5rem;
+        margin: 2rem;
+    }
+
+    &__parrafos {
+        padding: 1rem;
+    }
+
+    &__lista {
+        list-style-position: inside;
+        padding: 1rem;
+
+        @include movilM {
+            line-height: 1.8rem;
+        }
+    }
+
+    &__items {
+        font-family: 'birthstone', cursive;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+}
+
+.imgPreservadas {
+    border-radius: .7rem;
+    object-fit: cover;
+    width: 80%;
+    height: auto;
+}
+
+.size {
+    padding-top: 4rem;
+    margin: auto;
+
+}
+
+.posicion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
