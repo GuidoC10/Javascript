@@ -1,22 +1,19 @@
 
-
-/*let producto = prompt("Por favor ingrese el numero de articulo que desea comprar");
-let cantidad = prompt("Por favor ingrese la cantidad que desea comprar");*/
 let compras = "si";
-let iva = 1.21;
-//let totalIva = ;
 let valor1 = 1500;
 let valor2 = 2000;
 let valor3 = 3000;
 let valor4 = 4000;
-let ventaTotal = 1;
+let ventaTotal = 0;
 let envioTotal = 0;
 let envio1 = "Bonificado";
 let envio2 = 500;
 let envio3 = 1000;
 let envio4 = 2000;
+let iva = 1.21;
 
 while (compras == "si") {
+    let venta = 0;
     let producto = prompt("Por favor ingrese el numero de articulo que desea comprar");
     let cantidad = prompt("Por favor ingrese la cantidad que desea comprar");
 
@@ -48,7 +45,7 @@ while (compras == "si") {
         }
 
     }
-    compras = prompt("Desea seguir comprando?");
+    compras = prompt("Desea seguir comprando?").toLowerCase();
     ventaTotal = venta + ventaTotal;
 }
 
@@ -76,7 +73,7 @@ switch (envio) {
 }
 //HAGO UNA FUNCION PARA AGREGAR EL IVA AL TOTAL DE LA COMPRA
 function sumarIva(x) {
-    return x*1.21;
+    return x*iva;
 }
 
 let totalIva = sumarIva(ventaTotal);
