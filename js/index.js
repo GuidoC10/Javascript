@@ -1,5 +1,6 @@
 // GENERO UN ARRAY DONDE CARGAR TODOS LOS USUARIOS DE LA PAGINA
 let arrayUsuarios = [];
+let 
 
 // CON UNA CLASE Y UNA FUNCION VOY GENERARNDO AUTOMATICAMENTE CADA OBJETO CON LA INFORMACION DE CADA USUARIO NUEVO QUE SE CREA
 class Usuario {
@@ -31,6 +32,8 @@ while ( ingreso == "a" || ingreso == "b" || ingreso == "c") {
         case "b":
             let persona = prompt("Por favor ingrese en nombre de usuario que desea encontrar").toLowerCase();
             let indice = arrayUsuarios.find(buscador => buscador.nombre == persona);
+            // MUESTRO EL OBJETO DEL USUARIO QUE QUIERE RECUPERAR LA CLAVE
+            console.log(indice);
             alert(`Enviaremos un mail a su casilla ${indice.mail} para que pueda recuperar sus datos, Muchas gracias!`);
             ingreso = "";
             break;
@@ -43,5 +46,3 @@ while ( ingreso == "a" || ingreso == "b" || ingreso == "c") {
 } 
 // MUESTRO EL ARRAY TOTAL DE USUARIOS
 console.log(arrayUsuarios);
-// MUESTRO EL OBJETO DEL USUARIO QUE QUIERE RECUPERAR LA CLAVE
-console.log(indice);
