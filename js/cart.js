@@ -80,8 +80,19 @@ let totalIva = sumarIva(ventaTotal);
 
 //DOY LA DEVOLUCION DEL TOTAL DE LA COMPRA Y DEL COSTO DEL ENVIO
 if (envio == 1) {
-    alert(`Muchas gracias por tu compra, el total de la misma IVA incluido es de $${totalIva} y el costo del envio es ${envioTotal}`);
+    let infoVenta = document.createElement("ul");
+    infoVenta.innerHTML = `<ul>Total compra Iva incluido ${totalIva}</ul>
+                           <ul>Envio: ${envioTotal}</ul>`;
 
+    let finVenta = document.getElementById("ejemploDom");
+    finVenta.innerHTML = `<h2>Muchas gracias por tu compra</h2>`;
+    finVenta.append(infoVenta);
 } else {
-alert(`Muchas gracias por tu compra, el total de la misma IVA incluido es de $${totalIva} y el costo del envio es $${envioTotal}`);
+    let infoVenta1 = document.createElement("ul");
+    infoVenta1.innerHTML = `<ul>Total compra IVA incluido: ${totalIva}</ul>
+                            <ul>Envio: ${envioTotal}</ul>`;
+
+    let finVenta1 = document.getElementById("ejemploDom");
+    finVenta1.innerHTML = `<h2 style= "color:#B97375">Muchas gracias por tu compra</h2>`;
+    finVenta1.append(infoVenta1);
 }
