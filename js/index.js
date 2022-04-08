@@ -1,5 +1,6 @@
 // GENERO UN ARRAY DONDE CARGAR TODOS LOS USUARIOS DE LA PAGINA
 let arrayUsuarios = []; 
+let nombre1 = "";
 
 // CON UNA CLASE Y UNA FUNCION VOY GENERARNDO AUTOMATICAMENTE CADA OBJETO CON LA INFORMACION DE CADA USUARIO NUEVO QUE SE CREA
 class Usuario {
@@ -27,7 +28,10 @@ while ( ingreso == "a" || ingreso == "b" || ingreso == "c") {
         case "a":
             cargarUsuarios(arrayUsuarios);
             ingreso = prompt("Por favor ingrese la opcion desdeada\n A - Cargar un nuevo usuario\n B - Recuperar datos\n C - Salir").toLowerCase();
+            console.log(nombre1);
             break;
+        break;
+            
         case "b":
             let persona = prompt("Por favor ingrese en nombre de usuario que desea encontrar").toLowerCase();
             let indice = arrayUsuarios.find(buscador => buscador.nombre == persona);
