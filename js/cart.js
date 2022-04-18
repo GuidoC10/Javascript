@@ -89,14 +89,6 @@ function mensajeMantitas () {
     }
 }
 
-//GENERO UN ARRAY CON EL TOTAL DE CADA VENTA 
-console.log(arrayVentas);
-let arrayJson = JSON.stringify(arrayVentas);
-console.log(arrayJson);
-localStorage.setItem("ArrayDeVentas", arrayJson);
-
-console.log(JSON.parse(localStorage.getItem("ArrayDeVentas")));
-
 //MENSAJE DE FINALIZACION DE COMPRA
 function mensajeCarrito (x,y) {
     let limpiarCarrito = document.querySelector("#carrito");
@@ -107,6 +99,7 @@ function mensajeCarrito (x,y) {
         limpiarCarrito.appendChild(finalCarrito);
 }
 
+// MENSAJE EN CASO DE QUE NO HAYA STOCK
 function mensajeSinStock (x) {
     let limpiarCarrito = document.querySelector("#carrito");
     limpiarCarrito.innerHTML = "";
@@ -116,5 +109,9 @@ function mensajeSinStock (x) {
         finalCarrito.createElement("button");
         limpiarCarrito.appendChild(finalCarrito);
     }
+
+
+    //GENERO UN ARRAY CON EL TOTAL DE CADA VENTA 
+console.log(arrayVentas);
 
 
