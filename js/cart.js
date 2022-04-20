@@ -27,12 +27,9 @@ function mensajeglobo () {
     let cantidadGlobo1 = cantidadGlobo;
     let total1 = valor1 * cantidadGlobo1;
     stockGlobos = stockGlobos - cantidadGlobo1
-    if (stockGlobos < 0) {
-        mensajeSinStock("Globos");
-    } else {
-    arrayVentas.push( new Ventas(producto1, valor1, cantidadGlobo, total1));
+    stockGlobos < 0 ? mensajeSinStock("Globos") : arrayVentas.push( new Ventas(producto1, valor1, cantidadGlobo, total1));
     mensajeCarrito(cantidadGlobo, "Globos");
-    }
+
 }
 
 
@@ -44,13 +41,10 @@ function mensajeMacarons () {
     let valor1 = valorMacarons;
     let cantidadMacarons1 = cantidadMacarons;
     let total1 = valor1 * cantidadMacarons1;
-    stockMacarons = stockMacarons - cantidadMacarons1
-    if (stockMacarons < 0) {
-        mensajeSinStock("Macarons");
-    } else {
-    arrayVentas.push( new Ventas(producto1, valor1, cantidadMacarons, total1));
+    stockMacarons = stockMacarons - cantidadMacarons1;
+    stockMacarons < 0 ? mensajeSinStock("Macarons") : arrayVentas.push( new Ventas(producto1, valor1, cantidadMacarons, total1));
     mensajeCarrito(cantidadMacarons, "Macarons");
-    }
+   
 }
 
 
@@ -63,12 +57,9 @@ function mensajePreservadas () {
     let cantidadPreservadas1 = cantidadPreservadas;
     let total1 = valor1 * cantidadPreservadas1;
     stockPreservadas = stockPreservadas - cantidadPreservadas1
-    if (stockPreservadas < 0) {
-        mensajeSinStock("Rosas Preservadas");
-    } else {
-    arrayVentas.push( new Ventas(producto1, valor1, cantidadPreservadas, total1));
-    mensajeCarrito(cantidadPreservadas, "Rosas Preservadas");
-    }
+    stockPreservadas < 0 ? mensajeSinStock("Rosas Preservadas") : arrayVentas.push( new Ventas(producto1, valor1, cantidadPreservadas, total1));
+    mensajeCarrito(cantidadPreservadas, "Rosas Preservadas"); 
+   
 }
 
 
@@ -80,13 +71,10 @@ function mensajeMantitas () {
     let valor1 = valorMantitas;
     let cantidadMantitas1 = cantidadMantitas;
     let total1 = valor1 * cantidadMantitas1;
-    stockMantitas = stockMantitas - cantidadMantitas1
-    if (stockMantitas < 0) {
-        mensajeSinStock("Mantitas");
-    } else {
-        arrayVentas.push( new Ventas(producto1, valor1, cantidadMantitas, total1));
-        mensajeCarrito(cantidadMantitas, "Mantitas")
-    }
+    stockMantitas = stockMantitas - cantidadMantitas1;
+    stockPreservadas < 0 ? mensajeSinStock("Mantitas") : arrayVentas.push( new Ventas(producto1, valor1, cantidadMantitas, total1));
+    mensajeCarrito(cantidadMantitas, "Mantitas");
+    
 }
 
 //MENSAJE DE FINALIZACION DE COMPRA
@@ -106,7 +94,6 @@ function mensajeSinStock (x) {
     let finalCarrito = document.createElement("div");
         finalCarrito.className = "claseFormulario";
         finalCarrito.innerHTML = `Te pedimos disculpas, por el momento no contamos con la cantidad de ${x} que nos pedis`;
-        finalCarrito.createElement("button");
         limpiarCarrito.appendChild(finalCarrito);
     }
 

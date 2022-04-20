@@ -62,4 +62,7 @@ localStorage.setItem("USUARIOS", usuariosJson);
 let usuariosParse = JSON.parse(localStorage.getItem("USUARIOS"));
 console.log(usuariosParse);
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
