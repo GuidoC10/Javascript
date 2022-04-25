@@ -27,9 +27,11 @@ function mensajeglobo () {
     let cantidadGlobo1 = cantidadGlobo;
     let total1 = valor1 * cantidadGlobo1;
     stockGlobos = stockGlobos - cantidadGlobo1
-    stockGlobos < 0 ? mensajeSinStock("Globos") : arrayVentas.push( new Ventas(producto1, valor1, cantidadGlobo, total1));
-    mensajeCarrito(cantidadGlobo, "Globos");
-
+    stockGlobos < 0 ? mensajeSinStock("Globos") : (
+        arrayVentas.push( new Ventas(producto1, valor1, cantidadGlobo, total1)),
+        cantidadGlobo1 == 1 ? swal("Muchas Gracias", `Acabas de comprar ${cantidadGlobo} Globo`, "success") : swal("Muchas Gracias", `Acabas de comprar ${cantidadGlobo} Globos`, "success")
+    );
+    
 }
 
 
@@ -42,8 +44,10 @@ function mensajeMacarons () {
     let cantidadMacarons1 = cantidadMacarons;
     let total1 = valor1 * cantidadMacarons1;
     stockMacarons = stockMacarons - cantidadMacarons1;
-    stockMacarons < 0 ? mensajeSinStock("Macarons") : arrayVentas.push( new Ventas(producto1, valor1, cantidadMacarons, total1));
-    mensajeCarrito(cantidadMacarons, "Macarons");
+    stockMacarons < 0 ? mensajeSinStock("Macarons") : ( 
+        arrayVentas.push( new Ventas(producto1, valor1, cantidadMacarons, total1)),
+        cantidadMacarons1 == 1 && stockMacarons >= 0 ? swal("Muchas Gracias", `Acabas de comprar ${cantidadMacarons1} Macaron`, "success") : swal("Muchas Gracias", `Acabas de comprar ${cantidadMacarons1} Macarons`, "success")
+    );
    
 }
 
@@ -57,8 +61,10 @@ function mensajePreservadas () {
     let cantidadPreservadas1 = cantidadPreservadas;
     let total1 = valor1 * cantidadPreservadas1;
     stockPreservadas = stockPreservadas - cantidadPreservadas1
-    stockPreservadas < 0 ? mensajeSinStock("Rosas Preservadas") : arrayVentas.push( new Ventas(producto1, valor1, cantidadPreservadas, total1));
-    mensajeCarrito(cantidadPreservadas, "Rosas Preservadas"); 
+    stockPreservadas < 0 ? mensajeSinStock("Rosas Preservadas") : (
+        arrayVentas.push( new Ventas(producto1, valor1, cantidadPreservadas, total1)),
+        cantidadPreservadas1 == 1 ? swal("Muchas Gracias", `Acabas de comprar ${cantidadPreservadas1} Rosa Preservada`, "success") : swal("Muchas Gracias", `Acabas de comprar ${cantidadPreservadas1} Rosas Preservadas`, "success")
+    );
    
 }
 
@@ -72,9 +78,11 @@ function mensajeMantitas () {
     let cantidadMantitas1 = cantidadMantitas;
     let total1 = valor1 * cantidadMantitas1;
     stockMantitas = stockMantitas - cantidadMantitas1;
-    stockPreservadas < 0 ? mensajeSinStock("Mantitas") : arrayVentas.push( new Ventas(producto1, valor1, cantidadMantitas, total1));
-    mensajeCarrito(cantidadMantitas, "Mantitas");
-    
+    stockMantitas < 0 ? mensajeSinStock("Mantitas") : (
+        arrayVentas.push( new Ventas(producto1, valor1, cantidadMantitas, total1)),
+        cantidadMantitas1 == 1 && stockMantitas >= 0 ? swal("Muchas Gracias", `Acabas de comprar ${cantidadMantitas1} Mantita`, "success") : swal("Muchas Gracias", `Acabas de comprar ${cantidadMantitas1} Mantitas`, "success")
+    );
+
 }
 
 //MENSAJE DE FINALIZACION DE COMPRA
