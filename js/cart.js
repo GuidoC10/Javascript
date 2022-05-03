@@ -107,6 +107,25 @@ function mensajeSinStock (x) {
 
 
     //GENERO UN ARRAY CON EL TOTAL DE CADA VENTA 
-console.log(arrayVentas);
+//console.log(arrayVentas);
+
+//EJEMPLO FETCH 
+const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
+
+fetch(url)
+.then((response)=> response.json())
+.then((data)=> { 
+    mostrarApi(data);
+    console.log(data);
+});
+
+function mostrarApi (data) {
+    let nasa = document.querySelector("#fetch");
+    nasa.setAttribute("style", "display:flex; align-itemas:center; justify-content:center");
+    let imagenNasa = document.createElement("div");
+    imagenNasa.innerHTML = `<h2>${data.title}<h2>
+                            <img src=${data.hdurl} height=400rem; width=400rem;>`;
+    nasa.appendChild(imagenNasa);
 
 
+}

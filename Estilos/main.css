@@ -733,4 +733,11 @@ h3 {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
+
+/*
+#fetch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
 /*# sourceMappingURL=main.css.map */
