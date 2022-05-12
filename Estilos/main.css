@@ -672,6 +672,17 @@ h3 {
   text-align: center;
 }
 
+.btn {
+  background-color: black;
+  color: white;
+  border-radius: 0.5rem;
+  opacity: 0.8;
+}
+
+.oculto {
+  display: none;
+}
+
 .error {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -733,11 +744,4 @@ h3 {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
-
-/*
-#fetch {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}*/
 /*# sourceMappingURL=main.css.map */

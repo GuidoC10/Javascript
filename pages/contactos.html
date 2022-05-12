@@ -25,7 +25,7 @@
                             <a class="navItem nav__navItem" href="./rosasPreservadas.html">Rosas Preservadas</a>
                             <a class="navItem nav__navItem" href="./trabajos.html">Trabajos</a>
                             <a class="navItem nav__navItem" href="./enviosYPagos.html">Envios y Pagos</a>
-                            <a class="navItem nav__navItem" href="#">Contactos</a>
+                            <a class="navItem nav__navItem reload" href="#">Login</a>
                             <a class="navItem nav__navItem" href="../pages/cart.html">Carrito</a>
 
                         </div>
@@ -34,47 +34,39 @@
             </nav>
         </header>   
         <main class="contactos">
-            <!-- Formulario de contacto --> 
-            <form action="" method="GET" id="borrar" id="form">
-                <fieldset class="fieldset">
-                    <legend>Datos de Contacto</legend>
-                    <div class="fiedlset__contactosPadre">
-                        <div class="fieldset__contactosPadre--hijos">
-                            <label for="infoName">Nombre</label>
-                            <input type="text" name="infoName" id="infoName" placeholder="Escriba aqui su nombre">
-                        </div> 
-                        <div class="fieldset__contactosPadre--hijos">  
-                            <label for="infoApellido">Apellido</label>
-                            <input for="text" name="infoApellido" id="infoApellido" placeholder="Escriba aqui su apellido">
-                        </div>
-                        <div class="fieldset__contactosPadre--hijos">   
-                            <label for="infoMail">Email</label>
-
-                            <!-- VER LA ANOTACION PARA EL PASSWORD EN EL ATRIBUTO TYPE -->
-                            <input **type="password"** name="infoMail" id="infoMail" placeholder="Escriba aqui su email">
-                        </div>               
-                        <div class="fieldset__contactosPadre--hijos">
-                            <label for="infoFlores">¿Acerca de que producto desea recibir información?</label>
-                            <select name="infoFlores" id="infoFlores">
-                                <option value="naturales" disabled selected>Seleccione una Opcion</option>
-                                <option value="naturales">Flores Naturales</option>
-                                <option value="preservadas">Rosas preservadas</option>
-                                <option value="corazones">Corazones</option>
-                                <option value="letras">Letras</option>
-                            </select> 
-                        </div>
-                        <div class="fieldset__contactosPadre--hijos">
-                            <label for="maIinfo">¿Desea recibir las noticias?</label>
-                            <input type="radio" name="masInfo" id="masInfo" value="Si">Si
-                            <input type="radio" name="masInfo" id="masInfo" value="No">No
-                        </div>
-                        <div class="fieldset__contactosPadre--hijos">
-                            <input type="reset" value="Limpiar">
-                            <input type="submit" value="Enviar" id="okFormulario">
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
+                <!-- Formulario de contacto --> 
+                <form action="" method="GET" id="borrar" id="form">
+                    <fieldset class="fieldset">
+                        <legend class="legend">Bienvenido!!</legend>
+                            <div class="fiedlset__contactosPadre">
+                                <div class="fieldset__contactosPadre--hijos loginN">
+                                    <label for="infoName">Nombre</label>
+                                    <input type="text" name="infoName" id="infoName" placeholder="Escriba aqui su nombre">
+                                </div> 
+                                <div class="fieldset__contactosPadre--hijos loginA">  
+                                    <label for="infoApellido">Apellido</label>
+                                    <input for="text" name="infoApellido" id="infoApellido" placeholder="Escriba aqui su apellido">
+                                </div>
+                                <div class="fieldset__contactosPadre--hijos loginM">   
+                                    <label for="infoMail">Email</label>
+                                    <input type="text" name="infoMail" id="infoMail" placeholder="Escriba aqui su email">
+                                </div>
+                                <div class="fieldset__contactosPadre--hijos loginP">   
+                                    <label for="infoPassword">Contraseña</label>
+                                    <input type="password" name="infoPassword" id="infoPassword" placeholder="Escriba aqui su Contraseña">
+                                </div>               
+                                <div class="fieldset__contactosPadre--hijos loginB">
+                                    <input type="button" value="Registrarse" id="registro" class="btnRegistro btn">
+                                    <input type="button" value="Ingresar" id="ingreso" class="btnIngreso btn">
+                                    <input type="button" value="Olvide mi contraseña" class="btnOlvido btn oculto">
+                                    <input type="button" value="Iniciar Sesion" type="button" class="btn oculto btnInicioSesion">
+                                    <input type="button" value="Cerrar Sesion" type="button" class="btn oculto btnCerrarSesion">
+                                    <input type="button" value="Recuperar Contraseña"  class="btn oculto btnRecuperar">
+                                    <input type="button" value="volver"  class="btn oculto btnVolver">
+                                </div>
+                            </div>
+                    </fieldset>
+                </form>
             <div class="info">
                 <!-- Whatsapp - Instagram - Facebook - Mail -->
                 <h5><a href="https://api.whatsapp.com/send?phone=5491149475133&text=Hola!%20Quiero%20mas%20información!!"> <img src="../img/logo-whatsapp-verde-icone-ios-android-4096.png" alt="whatsapp" title="whatsapp" height="30rem" width="30rem" class="footer__span--redes"></a> 15-4-947-5133</h5>
@@ -94,6 +86,7 @@
         </footer> 
     </div>
     <script src="../js/contactos.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>

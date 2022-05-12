@@ -109,7 +109,7 @@ function mensajeSinStock (x) {
     //GENERO UN ARRAY CON EL TOTAL DE CADA VENTA 
 //console.log(arrayVentas);
 
-//EJEMPLO FETCH 
+///////////////////////////////////////////////////EJEMPLO FETCH 
 const url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
 
 fetch(url)
@@ -129,3 +129,5 @@ function mostrarApi (data) {
 
 
 }
+
+setInterval(() => {console.log(new Date().toLocaleTimeString());}, 1000);
