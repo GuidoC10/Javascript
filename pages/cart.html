@@ -21,7 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                     <div class="collapse navbar-collapse nav__botones" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
+                        <div class="navbar-nav nodoFinalCompra">
                             <a class="navItem nav__navItem" href="../pages/rosasPreservadas.html">Rosas Preservadas</a>
                             <a class="navItem nav__navItem" href="../pages/trabajos.html">Trabajos</a>
                             <a class="navItem nav__navItem" href="../pages/enviosYPagos.html">Envios y Pagos</a>
@@ -32,90 +32,50 @@
                 </div>
             </nav> 
         </header>
-        <main id="ejemploDom">
-            <div id="carrito" >
-                <div>
-                    <img src="../img/globo.jpeg" class="trabajos__imagen" alt="Globos" title="Globos">
+        <main>
+            <div class="carrito">
+                <div class="tarjetaCarrito">
+                    <img src="../img/globo.jpeg" class="trabajos__imagen"  alt="Globos" title="Globos">
                     <div>
                         <h3>Globos $3000</h3>
                     </div>
-                    <div class="botonera">
-                        <div>
-                            <button id="globo" class="btn btn-primary">Agregar</button>
-                        </div>
-                        <div>
-                            <select id="cantidadGlobo">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
+                    <div>
+                        <button id="globo" class="btn btn-primary">Agregar</button>
                     </div>
                 </div>
-                <div>
+                <div class="tarjetaCarrito">
                     <img src="../img/macarons.jpeg" class="trabajos__imagen" alt="Macarons" title="Macarons">
                     <div>
                         <h3>Macarons $1500</h3>
                     </div>
-                    <div class="botonera">
-                        <div>
-                            <button id="macarons" class="btn btn-primary">Agregar</button>
-                        </div>
-                        <div>
-                            <select id="cantidadMacarons">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
+                    <div>
+                        <button id="macarons" class="btn btn-primary">Agregar</button>
                     </div>
                 </div>
-                <div>
+                <div class="tarjetaCarrito">
                     <img src="../img/preservadas.jpeg" class="trabajos__imagen" alt="Rosas Preservadas" title="Rosas Preservadas">
                     <div>
                         <h3>Preservadas $5000</h3>
                     </div>
-                    <div class="botonera">
-                        <div>
-                            <button id="preservadas" class="btn btn-primary">Agregar</button>
-                        </div>
-                        <div>
-                            <select id="cantidadPreservadas">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
+                    <div>
+                        <button id="preservadas" class="btn btn-primary">Agregar</button>
                     </div>
                 </div>
-                <div>
+                <div class="tarjetaCarrito">
                     <img src="../img/mantita1.jpeg" class="trabajos__imagen" alt="Mantitas" title="Mantitas">
                     <div>
                         <h3>Mantitas $4000</h3>
                     </div>
-                    <div class="botonera">
-                        <div>
-                            <button id="mantitas" class="btn btn-primary">Agregar</button>
-                        </div>
-                        <div>
-                            <select id="cantidadMantitas">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
+                    <div>
+                        <button id="mantitas" class="btn btn-primary">Agregar</button>
                     </div>
                 </div>
-            </div>  
-            <div id="fetch">
+            </div> 
+            <div class="btnFinCarrito">
+                <button title="Ver Carrito" class="btn btnVerCarrito">Ver Carrito</button>
+                <button title="finCompra" class="btn btnFinalizaCompra">Finalizar Compra</button>
+            </div>
+            <!--<div id="fetch">-->
             </div>
         </main>
         <footer class="footer">
@@ -126,7 +86,7 @@
             <span>®Detalles en flor</span>
         </footer>
     </div>
-    <script src="../js/cart.js" ></script>
+    <script src="../js/productos.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>

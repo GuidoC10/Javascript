@@ -19,7 +19,6 @@ const nodoBotonOlvido = document.querySelector(".btnOlvido");
 const nodoBotonInicioSesion = document.querySelector(".btnInicioSesion");
 const nodoCerrarSesion = document.querySelector(".btnCerrarSesion");
 const nodoRecuperar = document.querySelector(".btnRecuperar");
-const nodoVolver = document.querySelector("btnVolver");
 let sessionIniciada = false;
 let userInit = "";
 
@@ -147,8 +146,6 @@ function olvidarPassword () {
     nodoBotonOlvido.classList.add("oculto");
     nodoBotonInicioSesion.classList.add("oculto");
     nodoRecuperar.classList.remove("oculto");
-    nodoVolver.classList.remove("remove");
-
     nodoRecuperar.addEventListener("click", recuperarPass);
     function recuperarPass (){
         let nombre = document.getElementById("infoName").value;
