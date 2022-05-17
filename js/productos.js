@@ -114,7 +114,7 @@ function finCompra () {
 
 
 ////MUESTRO EL CARRITO
-const nodoAgregarArticulo = document.querySelector(".btnAgregarArticulo");
+
 const nodoVerCarrito = document.querySelector(".btnVerCarrito");
 nodoVerCarrito.addEventListener("click", mostrarCarrito);
 
@@ -170,24 +170,31 @@ function functionC (index) {
 
 
 function functionB (index) {
-    if (arrayVentas[index].cantidad >1) {
+    if (arrayVentas[index].cantidad > 1) {
     arrayVentas[index].cantidad-=1,
     arrayVentas[index].total = arrayVentas[index].valor * arrayVentas[index].cantidad;
+    console.log(arrayVentas);
     mostrarCarrito ();
-    } else if (arrayVentas[index].cantidad = 1) {
-        functionA (index);
-    }
+    } else if (arrayVentas.length > 1){
+        arrayVentas.splice(index, 1);
+        console.log(arrayVentas);
+        mostrarCarrito ();
+    } else {
+        arrayVentas.splice(index, 1);
+        location.href = "../pages/cart.html";
 
+    }
+   
 }
 
 
 function functionA (index){
-    if (arrayVentas[index].cantidad >1) {
     console.log(index);
     arrayVentas.splice(index, 1);
     console.log(arrayVentas);
-    mostrarCarrito();
-    } else if (arrayVentas[index].cantidad = 1) {
+    if (arrayVentas.length >= 1) { 
+        mostrarCarrito();
+    } else if (arrayVentas.length === 0) {
         location.href = "../pages/cart.html";
     }
 
