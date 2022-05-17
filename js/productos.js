@@ -5,6 +5,16 @@ let valorMacarons = 1500;
 let valorPreservadas = 5000;
 let valorMantitas = 4000;
 let totalCarrito = 0;
+let nodoEliminarUnidad = 0;
+
+const cart = document.getElementById("cart");
+cart.addEventListener("click", recargar);
+
+function recargar () {
+    location.href = "../pages/cart.html";
+
+}
+
 
 class Ventas {
     constructor (producto, valor, cantidad, total, img) {
@@ -14,6 +24,7 @@ class Ventas {
         this.total = total;
         this.img = img;
     }
+
 }
 
 
@@ -67,79 +78,117 @@ function mensajeMantitas () {
 }
 
 
+////GENERO EL CARRITO
 function cargarCarrito(producto, valor, cantidad, total, img) {
     let enCarrito = arrayVentas.findIndex(element => element.producto === producto);
     
     enCarrito === -1 ? arrayVentas.push( new Ventas(producto, valor, cantidad, total, img)) : 
         (arrayVentas[enCarrito].cantidad+=1,
-        arrayVentas[enCarrito].total = arrayVentas[enCarrito].valor * arrayVentas[enCarrito].cantidad);
+         arrayVentas[enCarrito].total = arrayVentas[enCarrito].valor * arrayVentas[enCarrito].cantidad);
 
-    }
-console.log("FUERA DE LA FUNCTION", arrayVentas); 
+}
 
 
+////FINALIZAR COMPRA
 const nodoFinCompra = document.querySelector(".btnFinalizaCompra");
 nodoFinCompra.addEventListener("click", finCompra);
 
 function finCompra () {
-
-        arrayVentas.forEach((element) => {
-            totalCarrito += element.total;
-            console.log(`total ${element.producto} = ${element.total}, Nos contactaremos con vos para poder ultimar detalles`);
-        });
-        const nodoMostrarCarrito = document.querySelector(".carrito");
-        nodoMostrarCarrito.innerHTML = "";
-        const nodoFinCarrito = document.createElement("div");
-        nodoFinCarrito.setAttribute("class", "fuentes");
-        nodoFinCarrito.innerHTML = `Muchas gracias por tu compra, el total de la misma es de $${totalCarrito}, Nos pondremos en contacto para que puedas personalizar tus detalles`;
-        nodoMostrarCarrito.appendChild(nodoFinCarrito);
-        console.log(totalCarrito);
-        arrayVentas = [];
-        totalCarrito = 0;
-        nodoFinCompra.classList.add("oculto");
-        nodoVerCarrito.classList.add("oculto");
+    arrayVentas.forEach((element) => {
+        totalCarrito += element.total;
+        console.log(`total ${element.producto} = ${element.total}, Nos contactaremos con vos para poder ultimar detalles`);
+    });
+    const nodoMostrarCarrito = document.querySelector(".carrito");
+    nodoMostrarCarrito.innerHTML = "";
+    const nodoFinCarrito = document.createElement("div");
+    nodoFinCarrito.setAttribute("class", "fuentes");
+    nodoFinCarrito.innerHTML = `Muchas gracias por tu compra, el total de la misma es de $${totalCarrito}, Nos pondremos en contacto para que puedas personalizar tus detalles`;
+    nodoMostrarCarrito.appendChild(nodoFinCarrito);
+    console.log(totalCarrito);
+    arrayVentas = [];
+    totalCarrito = 0;
+    nodoFinCompra.classList.add("oculto");
+    nodoVerCarrito.classList.add("oculto");
 
 }
 
+
+////MUESTRO EL CARRITO
+const nodoAgregarArticulo = document.querySelector(".btnAgregarArticulo");
 const nodoVerCarrito = document.querySelector(".btnVerCarrito");
 nodoVerCarrito.addEventListener("click", mostrarCarrito);
 
 function mostrarCarrito () {
+    if (arrayVentas.length === 0) {
+        return swal({
+            title: "Por favor seleccione un articulo",
+            icon: "error",
+          });
+    }
     const nodoMostrarCarrito = document.querySelector(".carrito");
     nodoMostrarCarrito.innerHTML = "";
     const nodoNuevoCarrito = document.createElement("div");
     nodoNuevoCarrito.setAttribute("display", "flex-row");
     let contador = "";
-    arrayVentas.forEach((element)=>{
-        contador+=domVerCarrito(element);
+    arrayVentas.forEach((element, index)=>{
+        contador+=domVerCarrito(element, index);
         nodoNuevoCarrito.innerHTML=contador;
     });
     nodoMostrarCarrito.appendChild(nodoNuevoCarrito);
     nodoVerCarrito.classList.add("oculto");
-
-    const nodoEliminarUnidad = document.querySelector(".carritoProducto");
-    console.log(nodoEliminarUnidad);
-    let enCarrito2 = arrayVentas.findIndex(element => element.producto === nodoEliminarUnidad);
-    console.log(enCarrito2);
+       
 }
 
 
-function domVerCarrito(element) {
+function domVerCarrito(element, index) {
     return `<div class="verCarrito"> 
                 <div class="hijoCarrito">
                     <img src="${element.img}" class="imagenCarrito">
                 </div>
-                <div class="hijoCarrito fuentesVerCarrito carritoProducto">
+                <div class="hijoCarrito fuentesVerCarrito">
                     ${element.producto}
                 </div>
                 <div class="hijoCarrito cantidadVerCarrito fuentesVerCarrito">    
                     Cantidad de unidades:${element.cantidad}
                 </div>
                 <div class="hijoCarrito">
-                    <button title="Eliminar unidad" class="btn btnEliminarUnidad">Eliminar 1 unidad</button>
-                    <button title="Eliminar producto" class="btn btnEliminarProducto">Eliminar Producto</button>
+                    <button onclick="functionC(${index})" title="Agregar Unidad" class="btn">Agregar 1 Unidad</button>
+                    <button onclick="functionB(${index})"title="Eliminar unidad" value class="btn">Eliminar 1 Unidad</button>
+                    <button onclick="functionA(${index})" title="Eliminar producto" class="btn">Eliminar Producto</button>
                 </div>
             </div>`;
-            
-           
+
+}
+
+
+function functionC (index) {
+    arrayVentas[index].cantidad+=1,
+    arrayVentas[index].total = arrayVentas[index].valor * arrayVentas[index].cantidad;
+    mostrarCarrito ();
+
+}
+
+
+function functionB (index) {
+    if (arrayVentas[index].cantidad >1) {
+    arrayVentas[index].cantidad-=1,
+    arrayVentas[index].total = arrayVentas[index].valor * arrayVentas[index].cantidad;
+    mostrarCarrito ();
+    } else if (arrayVentas[index].cantidad = 1) {
+        functionA (index);
+    }
+
+}
+
+
+function functionA (index){
+    if (arrayVentas[index].cantidad >1) {
+    console.log(index);
+    arrayVentas.splice(index, 1);
+    console.log(arrayVentas);
+    mostrarCarrito();
+    } else if (arrayVentas[index].cantidad = 1) {
+        location.href = "../pages/cart.html";
+    }
+
 }

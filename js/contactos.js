@@ -132,6 +132,7 @@ function iniciarSesion (e) {
             icon: "error",
           });
     }
+    location.href ="../pages/contactos.html";
 }
 
 //////////////////////////////////////////////RECUPERO DE CONTRSASEÑA/////////////////////////////////////////////
@@ -206,10 +207,10 @@ if (sessionIniciada = true) {
 nodoCerrarSesion.addEventListener("click", finalizarSesion);
 
 function finalizarSesion (){
+    location.href = "../index.html";
     sessionIniciada = false;
     usuarioDeSessionStorage = "";
     sessionStorage.setItem("ingresoUsuario", JSON.stringify(usuarioDeSessionStorage));
-    location.href = "../index.html";
     sessionStorage.removeItem("ingresoUsuario");
 
 }
