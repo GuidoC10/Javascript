@@ -1,4 +1,4 @@
-const arrayVentas = JSON.parse(localStorage.getItem("MI-CARRITO")) || [];
+let arrayVentas = JSON.parse(localStorage.getItem("MI-CARRITO")) || [];
 
 //let arrayVentas = [];
 let valorGlobo = 3000;
@@ -100,7 +100,6 @@ nodoFinCompra.addEventListener("click", finCompra);
 function finCompra () {
     arrayVentas.forEach((element) => {
         totalCarrito += element.total;
-        console.log(`total ${element.producto} = ${element.total}, Nos contactaremos con vos para poder ultimar detalles`);
     });
     const nodoMostrarCarrito = document.querySelector(".carrito");
     nodoMostrarCarrito.innerHTML = "";
@@ -111,9 +110,11 @@ function finCompra () {
     console.log(totalCarrito);
     nodoFinCompra.classList.add("oculto");
     nodoVerCarrito.classList.add("oculto");
-    actualizarCarrito ();
     arrayVentas = [];
     totalCarrito = 0;
+    actualizarCarrito ();
+    //arrayVentas = [];
+    //totalCarrito = 0;
 
 }
 

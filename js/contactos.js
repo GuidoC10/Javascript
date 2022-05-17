@@ -2,7 +2,7 @@
 const arrayUsuarios = JSON.parse(localStorage.getItem("USUARIOS")) || [];
 
 //VERIFICO QUE ME CARGE LOS DATOS GUARDADOS EN EL LOCAL STORAGE
-console.log("USUARIOS CARGADOS DEL JSON", arrayUsuarios);
+//console.log("USUARIOS CARGADOS DEL JSON", arrayUsuarios);
 
 
 ///////////////////////////NODOS
@@ -191,7 +191,6 @@ function sessionUsuario (user) {
 
 if (sessionIniciada = true) {
     userInit = JSON.parse(sessionStorage.getItem("ingresoUsuario"))
-    //console.log(userInit);
     nodoLegend.innerHTML = `Hola ${userInit.nombre}!!!`;
     nodoNombre.classList.add("oculto");
     nodoApellido.classList.add("oculto");
