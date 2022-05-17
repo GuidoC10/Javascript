@@ -1,5 +1,6 @@
+const arrayVentas = JSON.parse(localStorage.getItem("MI-CARRITO")) || [];
 
-let arrayVentas = [];
+//let arrayVentas = [];
 let valorGlobo = 3000;
 let valorMacarons = 1500;
 let valorPreservadas = 5000;
@@ -86,6 +87,9 @@ function cargarCarrito(producto, valor, cantidad, total, img) {
         (arrayVentas[enCarrito].cantidad+=1,
          arrayVentas[enCarrito].total = arrayVentas[enCarrito].valor * arrayVentas[enCarrito].cantidad);
 
+    actualizarCarrito();
+
+
 }
 
 
@@ -105,10 +109,11 @@ function finCompra () {
     nodoFinCarrito.innerHTML = `Muchas gracias por tu compra, el total de la misma es de $${totalCarrito}, Nos pondremos en contacto para que puedas personalizar tus detalles`;
     nodoMostrarCarrito.appendChild(nodoFinCarrito);
     console.log(totalCarrito);
-    arrayVentas = [];
-    totalCarrito = 0;
     nodoFinCompra.classList.add("oculto");
     nodoVerCarrito.classList.add("oculto");
+    actualizarCarrito ();
+    arrayVentas = [];
+    totalCarrito = 0;
 
 }
 
@@ -165,6 +170,8 @@ function functionC (index) {
     arrayVentas[index].cantidad+=1,
     arrayVentas[index].total = arrayVentas[index].valor * arrayVentas[index].cantidad;
     mostrarCarrito ();
+    actualizarCarrito();
+
 
 }
 
@@ -173,29 +180,34 @@ function functionB (index) {
     if (arrayVentas[index].cantidad > 1) {
     arrayVentas[index].cantidad-=1,
     arrayVentas[index].total = arrayVentas[index].valor * arrayVentas[index].cantidad;
-    console.log(arrayVentas);
     mostrarCarrito ();
     } else if (arrayVentas.length > 1){
         arrayVentas.splice(index, 1);
-        console.log(arrayVentas);
         mostrarCarrito ();
     } else {
         arrayVentas.splice(index, 1);
         location.href = "../pages/cart.html";
 
     }
+    actualizarCarrito();
+
    
 }
 
 
 function functionA (index){
-    console.log(index);
     arrayVentas.splice(index, 1);
-    console.log(arrayVentas);
     if (arrayVentas.length >= 1) { 
         mostrarCarrito();
     } else if (arrayVentas.length === 0) {
         location.href = "../pages/cart.html";
     }
+    actualizarCarrito();
 
+}
+
+//LOCAL STORAGE
+function actualizarCarrito (){
+    let carritosJson = JSON.stringify(arrayVentas);
+    localStorage.setItem("MI-CARRITO", carritosJson);
 }
